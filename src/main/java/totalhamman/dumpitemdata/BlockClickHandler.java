@@ -24,7 +24,7 @@ public class BlockClickHandler {
 				int meta = e.getWorld().getBlockState(e.getPos()).getBlock().getMetaFromState(e.getWorld().getBlockState(e.getPos()));
 				ItemStack s = new ItemStack(blc, 1, meta);
 
-                sb.append("BlockID: " + s.getDisplayName() + "(" + Item.getIdFromItem(s.getItem()) + ")\n");
+                sb.append("BlockID: " + blc.getRegistryName().toString() + "(" + Item.getIdFromItem(s.getItem()) + ")\n");
 				sb.append("Block name: " + blc.getUnlocalizedName() + " = " + blc.getLocalizedName() + "\n");
 				sb.append("XYZ: " + e.getPos().toString() + "\n");
 				sb.append("Metadata: " + meta + "\n");

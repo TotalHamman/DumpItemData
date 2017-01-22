@@ -34,16 +34,20 @@ public class CmdDumpItemData extends CommandBase {
 	public void execute(MinecraftServer server, ICommandSender cs, String[] cmd) {
 		if(cs instanceof EntityPlayer) {
 			EntityPlayer plr = (EntityPlayer) cs;
-			ItemStack is = plr.inventory.getCurrentItem();
-			if(is != null) {
-				System.out.println("\n" +
-						"ItemID: " + is.getUnlocalizedName() + " (" + Item.getIdFromItem(is.getItem()) + ")\n" +
-						"Name: " + is.getItem().getUnlocalizedName() + " = " + is.getItem().getItemStackDisplayName(is) +
-						(is.getTagCompound() != null && is.getTagCompound().hasKey("display", 10) ? ("\nDisplay Name: " + is.getDisplayName() + "\n") : "\n") +
-						"Metadata: " + is.getItemDamage() + "\n" +
-						"Stacksize: " + is.stackSize + "/" + is.getMaxStackSize() + (is.getTagCompound() != null ? "\nNBT: {\n" + getNBTString(is.getTagCompound(), 1) + "}" : "")
-				);
-			}
+			dumpItem(plr);
+		}
+	}
+
+	public static void dumpItem(EntityPlayer plr) {
+		ItemStack is = plr.inventory.getCurrentItem();
+		if(is != null) {
+			System.out.println("\n" +
+					"ItemID: " + is.getUnlocalizedName() + " (" + Item.getIdFromItem(is.getItem()) + ")\n" +
+					"Name: " + is.getItem().getUnlocalizedName() + " = " + is.getItem().getItemStackDisplayName(is) +
+					(is.getTagCompound() != null && is.getTagCompound().hasKey("display", 10) ? ("\nDisplay Name: " + is.getDisplayName() + "\n") : "\n") +
+					"Metadata: " + is.getItemDamage() + "\n" +
+					"Stacksize: " + is.stackSize + "/" + is.getMaxStackSize() + (is.getTagCompound() != null ? "\nNBT: {\n" + getNBTString(is.getTagCompound(), 1) + "}" : "")
+			);
 		}
 	}
 	

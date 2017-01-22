@@ -21,6 +21,12 @@ public class CmdDumpBlockData extends CommandBase {
 		
 		return false;
 	}
+
+	public static void putWaiting(EntityPlayer player) {
+        if(!waiting.containsKey(player.getUniqueID())) {
+            waiting.put(player.getUniqueID(), true);
+        }
+    }
 	
 	@Override
 	public boolean checkPermission(MinecraftServer server, ICommandSender cs) {

@@ -23,8 +23,8 @@ configFile.withReader {
 }
 
 version = "${config.mcversion}-${config.mod_version}"
-group= "totalhamman.nbtdump" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "NBTDump"
+group= "totalhamman.dumpitemdata" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "dumpitemdata"
 
 sourceCompatibility = targetCompatibility = "1.7" // Need this here so eclipse task generates correctly.
 compileJava {
@@ -36,7 +36,7 @@ minecraft {
     runDir = "run"
     mappings = "${config.mcp_mappings}"
     replace '${mod_version}', project.config.mod_version
-    replaceIn "utils/Reference.java"
+    replaceIn "DumpItemData.java"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 }
 

@@ -46,7 +46,8 @@ public class CmdDumpItemData extends CommandBase {
 					"Name: " + is.getItem().getUnlocalizedName() + " = " + is.getItem().getItemStackDisplayName(is) +
 					(is.getTagCompound() != null && is.getTagCompound().hasKey("display", 10) ? ("\nDisplay Name: " + is.getDisplayName() + "\n") : "\n") +
 					"Metadata: " + is.getItemDamage() + "\n" +
-					"Stacksize: " + is.stackSize + "/" + is.getMaxStackSize() + (is.getTagCompound() != null ? "\nNBT: {\n" + getNBTString(is.getTagCompound(), 1) + "}" : "")
+					"Stacksize: " + is.stackSize + "/" + is.getMaxStackSize() +
+                    (is.getTagCompound() != null ? "\nNBT: {\n" + getNBTString(is.getTagCompound(), 1) + "}\n" : "\n")
 			);
 		}
 	}

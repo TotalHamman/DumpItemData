@@ -41,6 +41,7 @@ public class BlockClickHandler {
                         sb.append("NBT: {" + CmdDumpItemData.getNBTString(nbt, 1) + "}");
                     }
                 }
+                sb.append("\n");
 				
 				System.out.println("\n" + sb.toString());
 				

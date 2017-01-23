@@ -7,8 +7,8 @@
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
-  "authorList": ["Okkapel683"],
-  "credits": "N/A",
+  "authorList": ["Okkapel683, TotalHamman"],
+  "credits": "Okkapel683, for writing the original mod.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []

@@ -15,7 +15,7 @@ import totalhamman.dumpitemdata.network.PacketHandler;
 import totalhamman.dumpitemdata.utils.KeyBindings;
 
 
-@Mod(modid = "dumpitemdata", name = "DumpItemData", version = "1.0")
+@Mod(modid = "dumpitemdata", name = "DumpItemData", version = "$mod_version")
 public class DumpItemData {
 
 	public static final Logger log = LogManager.getLogger("dumpitemdata");

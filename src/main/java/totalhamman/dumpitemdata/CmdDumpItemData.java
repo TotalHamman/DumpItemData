@@ -122,12 +122,12 @@ public class CmdDumpItemData extends CommandBase {
 		}
 		
 		String ident_s = getIdent(ident);
-		
-		int i = 0;
+
 		StringBuilder sb = new StringBuilder();
-		for(Iterator tags = list.tagList.iterator(); tags.hasNext();) {
+
+		for(int i = 0; i <= list.tagCount(); i++) {
 			sb.append(ident_s + i + ": ");
-			NBTBase tag = (NBTBase) tags.next();
+			NBTBase tag = list.get(i);
 			byte id = tag.getId();
 			switch(id) {
 				case 0:
@@ -170,8 +170,7 @@ public class CmdDumpItemData extends CommandBase {
 					sb.append("<?>");
 					break;
 			}
-			
-			i++;
+
 			sb.append("\n");
 		}
 		
